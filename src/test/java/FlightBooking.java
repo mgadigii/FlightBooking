@@ -14,6 +14,9 @@ public class FlightBooking {
     WebDriver driver;
     @Test
     public void bookFlight() throws InterruptedException {
+         try{
+
+
          driver = new ChromeDriver();
          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
          driver.manage().window().maximize();
@@ -79,6 +82,9 @@ public class FlightBooking {
         Thread.sleep(5000);
 
         driver.quit();
+         } catch (Exception e) {
+             throw new RuntimeException(e);
+         }
 
     }
 
